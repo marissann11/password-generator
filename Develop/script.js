@@ -38,11 +38,11 @@ let includeNumbers = confirm("Would you like to include numbers?");
   }
 
   var passwordCriteria = {
-    length: passLength,
-    upper: includeUpper,
-    lower: includeLower,
-    special: includeSpecial,
-    numbers: includeNumbers
+    passLength: passLength,
+    upperChar: includeUpper,
+    lowerChar: includeLower,
+    specialChar: includeSpecial,
+    numbersChar: includeNumbers
   }
   return passwordCriteria;
 
@@ -52,44 +52,7 @@ let includeNumbers = confirm("Would you like to include numbers?");
 
 function generatePassword() {
 
-  var passwordCriteria = generateCriteria ();
-  console.log(passwordCriteria)
-
-  let passOptions = [];
-  console.log(passOptions)
-
-  if (passwordCriteria.upper) {
-    for (i = 0; i < includeUpper.length; i++) {
-      passOptions.push(upperChar[i]);
-    }
-  }
-  if (passwordCriteria.lower) {
-    for (i = 0; i < includeLower.length; i++) {
-      passOptions.push(lowerChar[i]);
-    }
-  }
-  if (passwordCriteria.special) {
-    for (i = 0; i < includeSpecial.length; i++) {
-      passOptions.push(specialChar[i]);
-    }
-  }
-  if (passwordCriteria.numbers) {
-    for (i = 0; i < includeNumbers.length; i++) {
-      passOptions.push(numberChar[i]);
-    }
-  }
-
-  let passwordResult =[];
   
-  for (let i = 0; i < passwordCriteria.length; i++) {
-    let randomGenerate = Math.floor(Math.random() * Math.floor(passwordCriteria.length));
-    passwordResult.push(passwordOptions[randomGenerate])
-  }
-
-  console.log(passwordResult)
-
-  let finalPass = passwordResult.join('');
-  console.log(finalPass)
 
 
 //Display the generated password to the page
