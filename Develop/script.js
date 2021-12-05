@@ -56,6 +56,8 @@ function generatePassword() {
 
   var finalPassword = "";
 
+  // For loop chooses character at random from string of characters for the specified length by user
+
     for (var i = 0; i < passLength; i++) {
       finalPassword += returnPassword.charAt(Math.floor(Math.random() * returnPassword.length));
     }
